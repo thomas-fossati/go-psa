@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 
@@ -22,7 +22,7 @@ func main() {
 
 	r := bufio.NewReader(os.Stdin)
 
-	in, err := ioutil.ReadAll(r)
+	in, err := io.ReadAll(r)
 	if err != nil {
 		log.Fatalf("reading JSON from stdin: %v", err)
 	}
